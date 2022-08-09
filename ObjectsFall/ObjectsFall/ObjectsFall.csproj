@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\background.jpg" />
+    <None Remove="images\netLeft.png" />
+    <None Remove="images\netRight.png" />
+    <None Remove="images\present_01.png" />
+    <None Remove="images\present_02.png" />
+    <None Remove="images\present_03.png" />
+    <None Remove="images\present_04.png" />
+    <None Remove="images\present_05.png" />
+    <None Remove="images\present_06.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="images\background.jpg" />
+    <EmbeddedResource Include="images\netLeft.png" />
+    <EmbeddedResource Include="images\netRight.png" />
+    <EmbeddedResource Include="images\present_01.png" />
+    <EmbeddedResource Include="images\present_02.png" />
+    <EmbeddedResource Include="images\present_03.png" />
+    <EmbeddedResource Include="images\present_04.png" />
+    <EmbeddedResource Include="images\present_05.png" />
+    <EmbeddedResource Include="images\present_06.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.4" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Windows.Foundation.UniversalApiContract">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\References\10.0.19041.0\Windows.Foundation.UniversalApiContract\10.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

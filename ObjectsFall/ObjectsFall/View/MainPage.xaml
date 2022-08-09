@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="ObjectsFall.View.MainPage"
+             xmlns:local="clr-namespace:ObjectsFall.Converters"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False"
+             BackgroundImageSource="{local:ImageResource ObjectsFall.images.background.jpg}">
+    <Grid ColumnDefinitions="8*,2*"
+              ColumnSpacing="0">
+
+        <StackLayout Grid.Column="0"
+                         HorizontalOptions="FillAndExpand">
+            <StackLayout 
+                         VerticalOptions="Start"
+                         Orientation="Horizontal"
+                         BackgroundColor="LightGray"
+                         HeightRequest="40">
+                <StackLayout Orientation="Horizontal"
+                             VerticalOptions="Center"
+                              HorizontalOptions="StartAndExpand">
+                    <Label Text="Elapsed time:  "
+                           Margin="20,0,0,0"
+                           FontSize="22" />
+                    <Label  Text="{Binding TimerValue}"
+                           FontSize="22" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                             VerticalOptions="Center"
+                              HorizontalOptions="StartAndExpand">
+                    <Label  Text="Total: "
+                           FontSize="22" />
+                    <Label  Text="{Binding Total}"
+                           FontSize="22" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                           VerticalOptions="Center"
+                           HorizontalOptions="StartAndExpand">
+                    <Label Text="Scoure: "
+                           Margin="20,0,0,0"
+                           FontSize="22" />
+                    <Label Text="{Binding Score}"
+                           FontSize="22" />
+                </StackLayout>
+            </StackLayout>
+            <Grid VerticalOptions="StartAndExpand" >
+                <Image Grid.Column="0"
+                        x:Name="image1" 
+                        IsVisible="false"
+                        VerticalOptions="Start"
+                        HorizontalOptions="Center"
+                        HeightRequest="100"
+                        WidthRequest="100"
+                       Source="{local:ImageResource ObjectsFall.images.present_01.png}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PresentTappedCommand}" CommandParameter="{Binding Source={x:Reference image1}}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Grid.Column="1" 
+                           x:Name="image2" 
+                           IsVisible="false"
+                           VerticalOptions="Start"
+                           HorizontalOptions="Center"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           Source="{local:ImageResource ObjectsFall.images.present_02.png}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PresentTappedCommand}" CommandParameter="{Binding Source={x:Reference image2}}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Grid.Column="2"
+                           IsVisible="false"
+                           VerticalOptions="Start"
+                           HorizontalOptions="Center"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           x:Name="image3" 
+                           Source="{local:ImageResource ObjectsFall.images.present_03.png}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PresentTappedCommand}" CommandParameter="{Binding Source={x:Reference image3}}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Grid.Column="3"
+                           IsVisible="false"
+                           VerticalOptions="Start"
+                           HorizontalOptions="Center"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           x:Name="image4"
+                           Source="{local:ImageResource ObjectsFall.images.present_04.png}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PresentTappedCommand}" CommandParameter="{Binding Source={x:Reference image4}}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Grid.Column="4"
+                          IsVisible="false"
+                           VerticalOptions="Start"
+                           HorizontalOptions="Center"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           x:Name="image5"
+                       Source="{local:ImageResource ObjectsFall.images.present_05.png}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PresentTappedCommand}" CommandParameter="{Binding Source={x:Reference image5}}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Grid.Column="5"
+                               IsVisible="false"
+                               VerticalOptions="Start"
+                               HorizontalOptions="Center"
+                               HeightRequest="100"
+                               WidthRequest="100"
+                                x:Name="image6" 
+                                Source="{local:ImageResource ObjectsFall.images.present_06.png}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PresentTappedCommand}" CommandParameter="{Binding Source={x:Reference image6}}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <BoxView x:Name="LastItem"
+                     HeightRequest="5"
+                     VerticalOptions="EndAndExpand"
+                     BackgroundColor="Blue"/>
+        </StackLayout>
+        <StackLayout Grid.Column="1"
+                     BackgroundColor="LightGray">
+            <StackLayout BackgroundColor="AliceBlue">
+                <Grid BackgroundColor="AliceBlue" ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Player name " 
+                           Grid.Column="0" 
+                           Grid.Row="0" />
+                    <Label Text="Total" 
+                           Grid.Column="1" 
+                           Grid.Row="0"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Score" 
+                           Grid.Column="2" 
+                           Grid.Row="0"/>
+                </Grid>
+                <BoxView HeightRequest="1"
+                          BackgroundColor="Black"/>
+                <ListView  ItemsSource="{Binding GameRecords}"
+                           x:Name="RecordList"
+                           Margin="5"
+                           BackgroundColor="AliceBlue">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Label Text ="{Binding Name}" 
+                                           Grid.Column="0"
+                                           VerticalOptions="Fill"
+                                           VerticalTextAlignment="Start"
+                                           HorizontalTextAlignment="Start"/>
+                                    <Label Grid.Column="1" 
+                                           HorizontalTextAlignment="Center"
+                                           Text ="{Binding Total}" />
+                                    <Label Grid.Column="2" 
+                                           HorizontalTextAlignment="Start"
+                                           Text ="{Binding Score}" />
+                                    <Button  Grid.Column="3"
+                                             Text="Delete" 
+                                            Command="{Binding Path=BindingContext.DeleteRecordCommand, Source={x:Reference RecordList}}" 
+                                            CommandParameter="{Binding .}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Padding="10">
+                <Label Text="Random time between items ms "
+                       VerticalOptions="Center"/>
+                <Entry Text="{Binding RandomTimeBetween}"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Padding="10">
+                <Label Text="Speed time Moves "
+                       VerticalOptions="Center"/>
+                <Entry Text="{Binding MoveSpeed}"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Padding="10">
+                <Label Text="Player name "
+                       VerticalOptions="Center"/>
+                <Entry Text="{Binding PlayerName}"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <Button Text="Start Game"
+                    CornerRadius="5"
+                    BackgroundColor="LightGray"
+                    HorizontalOptions="Center"
+                   Clicked="StartGame" />
+        </StackLayout>
+    </Grid>
+   </ContentPage>
