@@ -15,7 +15,7 @@ This is screen shot from UWP version
 
 ### How do I get set up? ###
 
-Juist clone the code and open it on visual studio (Tested on 2022)
+Just clone the code and open it on visual studio (Tested on 2022), you need to indtall xamarin on VS
 Select platform and run it 
 
 ### Contribution guidelines ###
