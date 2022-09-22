@@ -21,6 +21,7 @@ namespace ObjectsFall.View
         #region methods
         private async void StartGame(object sender, System.EventArgs e)
         {
+            StartGameButton.IsEnabled = false;
             bool showAlertPopup = (string.IsNullOrEmpty(viewModel.PlayerName) || viewModel.RandomTimeBetween == 0);
             if (showAlertPopup)
             {
@@ -38,6 +39,8 @@ namespace ObjectsFall.View
                 {
                     await RandomMoveItems();
                 };
+                if (viewModel.IsTimeEnd)
+                    StartGameButton.IsEnabled = true;
             }
 
         }
@@ -54,8 +57,8 @@ namespace ObjectsFall.View
 
         private async Task RandomMoveItems()
         {
-            await Task.Delay(GetRandomDelayTime());
             await MoveItems();
+            await Task.Delay(GetRandomDelayTime());
         }
 
         private int GetRandomDelayTime()
@@ -97,34 +100,19 @@ namespace ObjectsFall.View
                     await moveImag1;
                     break;
                 case 2:
-                    await moveImag1;
-                    await moveImag2;
+                   await  Task.WhenAll(moveImag1, moveImag2);
                     break;
                 case 3:
-                    await moveImag1;
-                    await moveImag2;
-                    await moveImag3;
+                    await Task.WhenAll(moveImag1, moveImag2, moveImag3);
                     break;
                 case 4:
-                    await moveImag1;
-                    await moveImag2;
-                    await moveImag3;
-                    await moveImag4;
+                    await Task.WhenAll(moveImag1, moveImag2, moveImag3, moveImag4);
                     break;
                 case 5:
-                    await moveImag1;
-                    await moveImag2;
-                    await moveImag3;
-                    await moveImag4;
-                    await moveImag5;
+                    await Task.WhenAll(moveImag1, moveImag2, moveImag3, moveImag4, moveImag5);
                     break;
                 case 6:
-                    await moveImag1;
-                    await moveImag2;
-                    await moveImag3;
-                    await moveImag4;
-                    await moveImag5;
-                    await moveImag6;
+                    await Task.WhenAll(moveImag1, moveImag2, moveImag3, moveImag4, moveImag5, moveImag6);
                     break;
                 default:
                     break;

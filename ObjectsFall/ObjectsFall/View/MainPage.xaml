@@ -210,10 +210,12 @@
                        HorizontalOptions="FillAndExpand"/>
             </StackLayout>
             <Button Text="Start Game"
+                    x:Name="StartGameButton"
                     CornerRadius="5"
+                    IsEnabled="True"
                     BackgroundColor="LightGray"
                     HorizontalOptions="Center"
-                   Clicked="StartGame" />
+                    Clicked="StartGame"/>
         </StackLayout>
     </Grid>
    </ContentPage>

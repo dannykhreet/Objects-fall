@@ -20,7 +20,7 @@ namespace ObjectsFall.ViewModel
     public class MainPageViewModel : BaseModel
     {
         #region Fields
-        private CountUpTimer _timer;
+        private CustomTimer _timer;
         private bool _isTimeEnd;
         private double _timerSecond;
         private int _total;
@@ -105,7 +105,7 @@ namespace ObjectsFall.ViewModel
                 OnPropertyChanged("PlayerName");
             }
         }
-        public CountUpTimer Timer
+        public CustomTimer Timer
         {
             get { return _timer; }
             set
@@ -134,7 +134,7 @@ namespace ObjectsFall.ViewModel
             gameRecordRepository = new GameRecordRepository();
             GameRecords =  gameRecordRepository.GameRecords();
             TimeSpan timeSpan = new TimeSpan(1);
-            Timer = new CountUpTimer(timeSpan);
+            Timer = new CustomTimer(timeSpan);
             MoveSpeed = 3000;
             RandomTimeBetween = 2000;
         }
